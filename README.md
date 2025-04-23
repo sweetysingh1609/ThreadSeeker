@@ -52,7 +52,7 @@ ThreadSeeker is a sleek, semantic search app that helps you explore insightful t
 
 ## 💻 Local Setup
 
-git clone https://github.com/yourusername/threadseeker.git
+git clone https://github.com/sweetysingh1609/ThreadSeeker.git
 cd threadseeker
 npm install
 npm start
