@@ -67,6 +67,9 @@ You can upload a `.txt` file under the **Upload** tab. The app will:
 
 **Example `.txt` file:**
 
+## Future plan
+1. I wanted to make a Backend in python which would have algorithms like Huggingface’s, etc.
+2. Then linking that python backend with this UI would boost the accuracy of this application even more.
 
 ## Challenges I Faced
 1. Tag Filtering Logic
