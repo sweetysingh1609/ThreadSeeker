@@ -10,7 +10,7 @@ ThreadSeeker is a sleek, semantic search app that helps you explore insightful t
 
 ## 🚀 Live Demo
 
-[🔗 View on Netlify (if hosted)](https://your-netlify-link.com)
+[🔗 View on Netlify (if hosted)](https://lovely-manatee-287c08.netlify.app/)
 
 ---
 
