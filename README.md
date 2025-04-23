@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+# 🧵 ThreadSeeker — AI-Curated Social Content Explorer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ThreadSeeker is a sleek, semantic search app that helps you explore insightful threads from a mock database. Users can input natural language queries like:
 
-## Available Scripts
+> “Show me threads about AI ethics with humor”
 
-In the project directory, you can run:
+...and ThreadSeeker will smartly return curated threads, including **summaries**, **explanations**, and **relevant tags**.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🚀 Live Demo
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[🔗 View on Netlify (if hosted)](https://your-netlify-link.com)
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 💡 Features
 
-### `npm run build`
+- 🔍 **AI-like Semantic Search**  
+  Input natural language queries and get intelligent results using smart keyword-matching logic.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- 🧠 **“Why This?” Relevance Insights**  
+  Threads come with a short explanation of why they were shown for your search.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- 🏷️ **Interactive Tag Filtering**  
+  Click any tag to instantly search all threads containing that topic.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- 💾 **Save for Later**  
+  Favorite a thread to view it later under the “Saved Threads” section.
 
-### `npm run eject`
+- 📤 **Upload `.txt` Files**  
+  Convert your own text files into thread entries dynamically.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- 🔖 **Auto-Tag Generation**  
+  Tags are automatically extracted from the uploaded text’s title and summary.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- 🔔 **Smart Notifications**  
+  Get real-time feedback when you search, save, or upload threads.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- 🧭 **Sidebar Navigation**  
+  Easily switch between Explore, Saved, Upload, and Settings.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- ✨ **Framer Motion Animations**  
+  Smooth, elegant transitions on cards and notifications.
 
-## Learn More
+- 📦 **Bootstrap 5 Styling**  
+  Clean, mobile-responsive layout using React-Bootstrap components.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- 🧪 **Basic Unit Testing**  
+  Includes edge-case test coverage for search behavior.
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 💻 Local Setup
 
-### Code Splitting
+git clone https://github.com/yourusername/threadseeker.git
+cd threadseeker
+npm install
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📦 File Upload Guide
 
-### Analyzing the Bundle Size
+You can upload a `.txt` file under the **Upload** tab. The app will:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Use the **first line** as the thread title  
+2. Use the **next 1–2 lines** as the summary  
+3. Auto-tag using key words found in the title and summary
 
-### Making a Progressive Web App
+**Example `.txt` file:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## Challenges I Faced
+1. Tag Filtering Logic
+At first, tags were rendered as plain labels. Making them clickable to auto-trigger a search while preserving animations and showing a spinner took some finesse. Handling the search delay gracefully without a backend required simulating async logic properly.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+2. Semantic Filtering
+Simulating AI-curated results with only a static dataset was tricky. I had to write logic in search.js to approximate what an LLM would do — matching keywords in titles, tags, and partial summaries while still showing “Why this?” logic that felt intelligent.
 
-### Deployment
+3. Loader Integration
+I initially tried to show a loader when the tag was clicked, but it conflicted with the synchronous nature of the mock data. I eventually simplified it to maintain a smooth experience.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+4. UX Feedback
+Creating a smooth, minimal, yet expressive interface took iteration. I chose Framer Motion for subtle animations and Bootstrap for clarity. Handling save/delete actions and alerts without cluttering the page required careful design.
 
-### `npm run build` fails to minify
+5. Dynamic Thread Creation
+Parsing .txt files, cleaning text, and turning it into UI-rich thread entries with tags and titles dynamically was non-trivial.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## 🛠️ Tech Stack
+
+- **React.js**  
+- **Bootstrap 5**  
+- **Framer Motion** (animations)  
+- **React-Bootstrap** (UI components)  
+- **React Testing Library** + **Jest** (for tests)
